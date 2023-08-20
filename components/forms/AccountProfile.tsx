@@ -8,7 +8,6 @@ import * as z from "zod";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -134,6 +133,7 @@ export default function AccountProfile({ user, btnTitle }: Props) {
                   onChange={(e) => handleImage(e, field.onChange)}
                 />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
@@ -152,6 +152,7 @@ export default function AccountProfile({ user, btnTitle }: Props) {
                   {...field}
                 />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
@@ -170,6 +171,7 @@ export default function AccountProfile({ user, btnTitle }: Props) {
                   {...field}
                 />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
@@ -188,6 +190,7 @@ export default function AccountProfile({ user, btnTitle }: Props) {
                   {...field}
                 />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
