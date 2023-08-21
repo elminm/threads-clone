@@ -24,13 +24,9 @@ export default function UserCard({
   return (
     <article className="user-card">
       <div className="user-card_avatar">
-        <Image
-          src={imgUrl}
-          alt="logo"
-          width={48}
-          height={48}
-          className="rounded-full"
-        />
+        <div className="relative w-12 h-12 rounded-full overflow-hidden">
+          <Image src={imgUrl} alt="logo" fill className="object-cover " />
+        </div>
         <div className="flex-1 text-ellipsis">
           <h4 className="text-base-semibold text-light-1">{name}</h4>
           <p className="text-small-medium text-gray-1">@{username}</p>

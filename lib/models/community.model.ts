@@ -1,28 +1,29 @@
 import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema({
+const communitySchema = new mongoose.Schema({
   id: { type: String, required: true },
   username: { type: String, required: true, unique: true },
   name: { type: String, required: true },
   image: String,
   bio: String,
+  createdBy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  },
   threads: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Thread",
     },
   ],
-  onboarded: {
-    type: Boolean,
-    default: false,
-  },
-  comminities: [
+  members: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Community",
+      ref: "User",
     },
   ],
 });
 
-const User = mongoose.models.User || mongoose.model("User", userSchema);
-export default User;
+const Community =
+  mongoose.models.Community || mongoose.model("User", communitySchema);
+export default Community;
