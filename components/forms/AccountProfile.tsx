@@ -47,7 +47,7 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
   const form = useForm<z.infer<typeof UserValidation>>({
     resolver: zodResolver(UserValidation),
     defaultValues: {
-      profile_photo: user?.image ? user.image : "",
+      profile__photo: user?.image ? user.image : "",
       name: user?.name ? user.name : "",
       username: user?.username ? user.username : "",
       bio: user?.bio ? user.bio : "",
@@ -55,14 +55,14 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
   });
 
   const onSubmit = async (values: z.infer<typeof UserValidation>) => {
-    const blob = values.profile_photo;
+    const blob = values.profile__photo;
 
     const hasImageChanged = isBase64Image(blob);
     if (hasImageChanged) {
       const imgRes = await startUpload(files);
 
       if (imgRes && imgRes[0].fileUrl) {
-        values.profile_photo = imgRes[0].fileUrl;
+        values.profile__photo = imgRes[0].fileUrl;
       }
     }
 
@@ -72,7 +72,7 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
       username: values.username,
       userId: user.id,
       bio: values.bio,
-      image: values.profile_photo,
+      image: values.profile__photo,
     });
 
     if (pathname === "/profile/edit") {
@@ -113,7 +113,7 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
       >
         <FormField
           control={form.control}
-          name="profile_photo"
+          name="profile__photo"
           render={({ field }) => (
             <FormItem className="flex items-center gap-4">
               <FormLabel className="account-form_image-label">
