@@ -49,14 +49,18 @@ export async function fetchPosts(pageNumber = 1, pageSize = 20) {
 }
 
 interface Params {
-  text: string,
-  author: string,
-  communityId: string | null,
-  path: string,
+  text: string;
+  author: string;
+  communityId: string | null;
+  path: string;
 }
 
-export async function createThread({ text, author, communityId, path }: Params
-) {
+export async function createThread({
+  text,
+  author,
+  communityId,
+  path,
+}: Params) {
   try {
     connectToDB();
 
@@ -166,12 +170,12 @@ export async function fetchThreadById(threadId: string) {
         path: "author",
         model: User,
         select: "_id id name image",
-      }) // Populate the author field with _id and username
+      })
       .populate({
         path: "community",
         model: Community,
         select: "_id id name image",
-      }) // Populate the community field with _id and name
+      })
       .populate({
         path: "children", // Populate the children field
         populate: [
