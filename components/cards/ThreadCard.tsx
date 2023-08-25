@@ -54,6 +54,7 @@ function ThreadCard({
                 alt="user_community_image"
                 fill
                 className="cursor-pointer rounded-full"
+                priority
               />
             </Link>
 
@@ -77,6 +78,7 @@ function ThreadCard({
                   width={24}
                   height={24}
                   className="cursor-pointer"
+                  priority
                 />
 
                 <Link href={`/thread/${id}`}>
@@ -86,6 +88,7 @@ function ThreadCard({
                     width={24}
                     height={24}
                     className="cursor-pointer object-contain"
+                    priority
                   />
                 </Link>
                 <Image
@@ -94,6 +97,7 @@ function ThreadCard({
                   width={24}
                   height={24}
                   className="cursor-pointer object-contain"
+                  priority
                 />
                 <Image
                   src="/assets/share.svg"
@@ -101,6 +105,7 @@ function ThreadCard({
                   width={24}
                   height={24}
                   className="cursor-pointer object-contain"
+                  priority
                 />
               </div>
 
@@ -134,6 +139,7 @@ function ThreadCard({
               width={24}
               height={24}
               className={`${index !== 0 && "-ml-5"} rounded-full object-cover`}
+              priority
             />
           ))}
 
@@ -161,6 +167,7 @@ function ThreadCard({
             width={14}
             height={14}
             className="ml-1 rounded-full object-cover"
+            priority
           />
         </Link>
       )}

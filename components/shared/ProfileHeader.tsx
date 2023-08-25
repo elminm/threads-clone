@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface Props {
   accountId: string;
@@ -17,7 +20,11 @@ export default function ProfileHeader({
   bio,
 }: Props) {
   return (
-    <div className="flex w-full flex-col justify-start">
+    <motion.div
+      className="flex w-full flex-col justify-start"
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+    >
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="w-20 h-20 relative object-cover">
@@ -40,6 +47,6 @@ export default function ProfileHeader({
       {/* community */}
       <p className="mt-6 max-w-lg text-base-regular text-light-2">{bio}</p>
       <div className="mt-12 h-0.5 bg-dark-3 w-full" />
-    </div>
+    </motion.div>
   );
 }

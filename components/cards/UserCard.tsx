@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-
+import { motion } from "framer-motion";
 import { Button } from "../ui/button";
 
 interface Props {
@@ -19,7 +19,11 @@ function UserCard({ id, name, username, imgUrl, personType }: Props) {
   const isCommunity = personType === "Community";
 
   return (
-    <article className="user-card">
+    <motion.article
+      className="user-card"
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+    >
       <div className="user-card_avatar">
         <div className="relative h-12 w-12">
           <Image
@@ -48,7 +52,7 @@ function UserCard({ id, name, username, imgUrl, personType }: Props) {
       >
         View
       </Button>
-    </article>
+    </motion.article>
   );
 }
 
