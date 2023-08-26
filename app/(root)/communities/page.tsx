@@ -7,6 +7,7 @@ import CommunityCard from "@/components/cards/CommunityCard";
 
 import { fetchUser } from "@/lib/actions/user.actions";
 import { fetchCommunities } from "@/lib/actions/community.actions";
+import TestComp from "@/components/cards/TestComp";
 
 async function Page({
   searchParams,
@@ -27,6 +28,7 @@ async function Page({
 
   return (
     <>
+      <TestComp />
       <h1 className="head-text">Communities</h1>
 
       <div className="mt-5">
@@ -34,6 +36,7 @@ async function Page({
       </div>
 
       <section className="mt-9 flex flex-wrap gap-4">
+        
         {result.communities.length === 0 ? (
           <p className="no-result">No Result</p>
         ) : (
@@ -59,6 +62,7 @@ async function Page({
         pageNumber={searchParams?.page ? +searchParams.page : 1}
         isNext={result.isNext}
       />
+
     </>
   );
 }
