@@ -1,12 +1,13 @@
-// import { UserButton } from "@clerk/nextjs";
 
 import ThreadCard from "@/components/cards/ThreadCard";
 import { fetchPosts } from "@/lib/actions/thread.actions";
 import { currentUser } from "@clerk/nextjs";
+
 export default async function Home() {
   const user = await currentUser();
   const result = await fetchPosts(1, 30);
-
+console.log("RESULT",result);
+console.log(user);
   return (
     <>
       <h1 className="head-text head-left">Home</h1>
@@ -31,7 +32,6 @@ export default async function Home() {
           </>
         )}
       </section>
-      {/* <UserButton afterSignOutUrl="/"/> */}
     </>
   );
 }

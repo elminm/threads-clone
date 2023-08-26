@@ -19,7 +19,6 @@
     "@radix-ui/react-tabs": "^1.0.4",
     "@radix-ui/react-toast": "^1.1.4",
     "@types/node": "20.4.2",
-    "@types/react": "18.2.15",
     "@types/react-dom": "18.2.7",
     "@uploadthing/react": "^5.2.0",
     "autoprefixer": "10.4.14",
@@ -47,5 +46,8 @@
     "typescript": "5.1.6",
     "uploadthing": "^5.2.0",
     "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.21"
   }
 }
