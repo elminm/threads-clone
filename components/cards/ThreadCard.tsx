@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -39,6 +40,7 @@ function ThreadCard({
   comments,
   isComment,
 }: Props) {
+  
   return (
     <article
       className={`flex w-full flex-col rounded-xl ${
